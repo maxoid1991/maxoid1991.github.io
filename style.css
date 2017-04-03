@@ -1,0 +1,44 @@
+a {
+	font-family: 'Play', sans-serif;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 10px;
+	transition-duration: .5s;
+	border: solid transparent 1px;
+}
+
+a:hover {
+	cursor: pointer;
+	border: solid lightblue 1px;
+	border-radius: 5px;
+}
+
+body {
+	margin: 0;
+}
+
+.links {
+	width: 400px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	transform: translateY(-50%);
+}
+
+.desc {
+  font-family: 'Play', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  line-height: 19px;
+}
+
+.robo {
+	width: 150px;
+	display: block;
+	margin: 0 auto;
+}
