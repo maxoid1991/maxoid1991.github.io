@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Groovy</title>
+    
+    <!--Angular lib, JQuery lib, Google font, Angular: sanitize html, Route-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js'></script>
+    
+    <!--Scripts: App, news block, routing Main pages, Global Search; Functions to Rubrika Page, rubrika routing -->
+    <script src='js/app.js'></script>
+    <script src='js/news.js'></script>
+
+    <script src='js/route_global.js'></script>
+    <script src='js/search_global.js'></script>
+    
+    <script src='js/rubrika_func.js'></script>
+    <script src='js/route_rub.js'></script>
+    <script src='js/block_pages_main.js'></script>
+
+
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Google font-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <!--Device width-->
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no, maximum-scale=1.0">
+
+    
+</head>
+
+<body ng-app='AppSite'>
+
+<div class="pre_block"></div>
+
+<div class="Preload_d">
+  <img src="post_images/preloader.gif" alt="Preloader" class="preloader">
+  <p class="preload_txt">Загружаем...</p>
+</div>
+
+<div class="stop">
+   <img src='img/oops.png' class="oops">
+   <p class='stop_text'>Ресурс новый, больше новостей пока нет. Мы активно собираем информацию. Возвращайтесь позже.</p><a href='#/'><p class='back_to_first'>В начало</p></a>
+   <img src='post_images/close.png' class="close">
+</div>
+ 
+<div ng-controller='SecondCtrl' class='Ctrl_Opacity'>
+<div ng-controller='ThirdCtrl'>
+<div ng-controller='FourCtrl'>
+    
+    <header>     
+        <a href="index.html#/"><div class='site_logo'></div></a>
+
+        <div class="Search_div">
+          <input type="text" ng-model='Filt' ng-focus='focus()' class="StartPageInput" value='Privet!' placeholder='Поиск...'>
+        </div>
+        
+        <div class='Rubriki'>
+           <p ng-click='rub($event)' class='Rub_name'>Фотография</p>
+           <p ng-click='rub($event)' class='Rub_name'>Видео</p>
+           <p ng-click='rub($event)' class='Rub_name'>Юмор</p>
+           <p ng-click='rub($event)' class='Rub_name'>Девушки</p>
+           <p ng-click='rub($event)' class='Rub_name'>Цитаты</p>
+           <p ng-click='rub($event)' class='Rub_name'>Автомобили</p>
+           <p ng-click='rub($event)' class='Rub_name'>Еда, Напитки</p>
+           <p ng-click='rub($event)' class='Rub_name'>Музыка</p>
+           <p ng-click='rub($event)' class='Rub_name'>Места</p>
+
+
+        </div>
+
+
+        <div class="Widget">
+
+        <!--Погода-->
+<div class="Pogoda">
+<div id='meteoprog-informer' style='width:110px; height:32px;'><a href='http://www.meteoprog.by/ru/weather/Minsk/'>Минск</a></div><script>
+url='http://www.meteoprog.by/ru/informers/weather-now.html?cities%5B%5D=Minsk&background=ffffff&textcolor=000000&linkcolor=2b85ca&width=100&avatar=0';
+key1='5dc39cc98a834c090bcfe9a9f74cf3389c1ca0e5';
+key2='292c8a3706ab8423543e9fe80a48b5e00e696fbc';
+var script = document.createElement('script');
+script.src = 'http://www.meteoprog.by/js/new_design/weather-informer.js';
+document.body.appendChild(script);
+</script>
+</div>
+
+<p class='Pogoda_other'>Погода на неделю</p>
+<p class='Pogoda_other'>Погода в других городах</p>
+
+<div class="Music_genre">
+<ul class='Genre_Ul'>
+    <li class='Genre_M'>Playlists:</li>
+    <li class='Genre_M'>Summer</li>
+    <li class='Genre_M'>Sunset</li>
+    <li class='Genre_M'>Indie</li>
+    <li class='Genre_M'>Pop</li>
+    <li class='Genre_M'>Rock</li>
+    <li class='Genre_M'>Epic</li>
+    <li class='Genre_M'>Dance</li>
+    <li class='Genre_M'>Chill & Relax</li>
+    <li class='Genre_M'>Workout</li>
+    <li class='Genre_M'>Smile</li>
+</ul>
+    
+
+
+</div>
+
+<!--Радио-->
+
+<div class="Radio">
+<iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=325&height=260&color=007FEB&layout=dark&size=medium&type=playlist&id=948710155&app_id=1" width="325" height="260"></iframe>
+</div>
+
+
+
+
+
+        </div>
+
+    </header> 
+       
+    <ng-view class='tru'></ng-view>
+    
+    
+<!--Номера страниц MainPage-->    
+    <div class="PageChange">
+    <a href="" class="Prev Arr" ng-click='prev()'>Назад</a>
+    
+    <div class="pageNumbers">
+      <a href="#/" class="pageLink">1</a>
+      <a href="#/page2" class="pageLink">2</a>
+      <a href="#/page3" class="pageLink">3</a>
+      <a href="#/page4" class="pageLink">4</a>
+      <a href="#/page5" class="pageLink">5</a>
+      <a href="#/page6" class="pageLink">6</a>
+      <a href="#/page7" class="pageLink">7</a>
+      <a href="#/page8" class="pageLink">8</a>
+      <a href="#/page9" class="pageLink">9</a>
+      <a href="#/page10" class="pageLink">10</a>
+    </div>
+    
+    <a href="" class="Next Arr" ng-click='next()'>Вперёд</a>
+    <p class='hide_count'>{{count}}</p>
+    </div>
+    
+<!--Номер страниц Поисковика-->
+<div class="SearchPageNumb">
+    <a href="" ng-click='SearchPrev()' class='SearchPrev Button_Search'>Предыдущие</a>
+    <a href="" ng-click='SearchNext()' class='SearchNext Button_Search'>Следующие</a>
+</div>
+
+<!--Номер страниц Поисковика РУБРИК-->
+<div class="SearchPageNumb2">
+    <a href="" ng-click='SearchPrevRub()' id='Rub_Prev' class='SearchPrev Button_Search'>Предыдущие</a>
+    <a href="" ng-click='SearchNextRub()' id='Rub_Next' class='SearchNext Button_Search'>Следующие</a>
+</div>
+
+<p class='hide_count'>{{count2}}</p>
+
+</div>
+</div>
+</div>
+
+<p class="ButtonPlayer">Показать <br> плеер</p>
+<p class="ButtonPlayer">Скрыть <br> плеер</p>
+   
+</body>
+</html>

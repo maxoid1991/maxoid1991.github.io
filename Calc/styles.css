@@ -1,0 +1,33 @@
+p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.odin, .odin2, .totable {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.butt, .butt2 {
+  display: block;
+  margin: 0 auto;
+}
+
+.calcu {
+  width: 1000px;
+  background: lightgrey;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -500px;
+  transform: translateY(-50%);
+}
+
+h2 {
+  text-align:center;
+}
+
+
+

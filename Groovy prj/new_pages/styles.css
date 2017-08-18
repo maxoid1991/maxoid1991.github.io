@@ -1,0 +1,55 @@
+body {
+	height: 1400px;
+	margin: 0 auto;
+	background: url('../img/bg/congruent_outline.png')
+}
+
+.Page {
+	width: 1200px;
+	border: solid transparent 1px;
+	margin: 20px auto;
+	background: white;
+	border-radius: 5px;
+	background: url('../img/bg/wet_snow.png');
+}
+
+.logo {
+	width: 300px;
+    height: 90px;
+    margin: 45px auto;
+    background: url('../img/logo.png');
+    background-size: 300px 90px;
+    background-position: -20px 0;
+}
+
+h2, p {
+	font-family: 'Open Sans', sans-serif;
+	white-space: pre-wrap;
+	padding: 0 170px;
+	white-space: pre-wrap;
+}
+
+h2 {
+	text-align: center;
+	line-height: 1.1em;
+	letter-spacing: -1.1px;
+	font-size: 1.6em;
+}
+
+.Lid_pic {
+	width: 950px;
+	height: 400px;
+	margin: 44px auto;
+	background: url('pic/uni.jpg');
+	background-size: 1000px 400px;
+	border-radius: 5px;
+}
+
+.Date {
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+	font-size: .9em;
+	margin: 40px 0 -35px 0;
+	padding: 0 150px;
+}
+

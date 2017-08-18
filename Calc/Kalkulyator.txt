@@ -1,0 +1,74 @@
+document.getElementsByClassName('butt')[0].addEventListener('click', foo);
+
+let od = document.getElementsByClassName('odin')[0];
+let od2 = document.getElementsByClassName('odin')[1];
+let od3 = document.getElementsByClassName('odin')[2]; 
+let od4 = document.getElementsByClassName('odin')[3];
+let od5 = document.getElementsByClassName('result')[0];
+
+
+function foo() {
+
+
+var Total = Number(od.value) * Number(od2.value)/1000 + Number(od3.value) * Number(od4.value)/1000;
+
+od5.innerHTML = 'Нужно купить: ' + Total + ' кг/л. продуктов';
+
+od.value = od2.value = od3.value = od4.value = "";
+
+};
+
+
+
+<div class="calcu">
+
+<h2>Шашлылятор, Бухлятор v1.0</h2>
+
+<p>Парней:</p> <input type="text" class="odin" placeholder='Кол-во человек'><br/>
+<p>Кол-во еды для парней (гр/мг):</p> <input type="text" class="odin" placeholder='Гр/Мл'><br/>
+<p>Девушек:</p> <input type="text" class="odin" placeholder='Кол-во человек'><br/>
+
+<p>Кол-во еды для девушек (гр/мл):</p> <input type="text" class="odin" placeholder='Гр/Мл'><br/>
+<button class='butt'>Пресс фор э мэджик</button>
+<p class="result">Купить: </p>
+</div>
+
+
+p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.odin {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.butt {
+  display: block;
+  margin: 0 auto;
+}
+
+.calcu {
+  width:300px;
+  background: lightgrey;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  transform: translateY(-50%);
+}
+
+h2 {
+  text-align:center;
+}
+
+.result {
+  margin-bottom: 50px;
+}
+
+.result {
+  margin-bottom: 50px;
+}
